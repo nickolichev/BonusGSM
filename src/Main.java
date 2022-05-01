@@ -2,27 +2,22 @@ public class Main {
     public static void main(String[] args) {
 
         int amountStart = 100; // начальная сумма на счете
-        int amountRefillFirst = 100; // первое пополнение счета
-        int amountRefillSecond = 1_000; // второе пополнение счета
-        int bonus1 = 0; // расчет бонусов
-        int totalFirst = (amountStart + amountRefillFirst + bonus1); // итог первого пополнения  счета
-        int bonus = (amountRefillSecond / 100); // расчет бонусов
-        int totalSecond = (amountStart + amountRefillSecond + bonus); // итог второго пополнения счета
+        int amountRefill = 1000; // пополнение счета
+        int bonus = amountRefill / 100; // расчет бонусов
+        int totalBonus = (amountStart + amountRefill + bonus); // итог пополнения  счета, в т.ч. бонусы
+        int total = (amountStart + amountRefill); // итог пополнения  счета, без бонусов
 
-        if (amountRefillFirst < 1_000) {
+        if (amountRefill < 1_000) {
+
+            System.out.println("Сумма пополнения " + amountRefill + " рублей");
+            System.out.println("Сумма на балансе " + total + " руб");
+
+        } else {
+
+            System.out.println("Сумма пополнения " + amountRefill + " рублей");
+            System.out.println("Вам начислено " + bonus + " бонусных рублей");
+            System.out.println("Сумма на балансе " + totalBonus + " руб");
 
         }
-
-        System.out.println("Сумма пополнения " + amountRefillFirst + " рублей");
-        System.out.println("Вам начислено " + bonus + " бонусных рублей");
-        System.out.println("Сумма на балансе " + totalFirst + " руб");
-
-        if (amountRefillSecond >= 1_000) {
-
-        }
-        System.out.println("Сумма пополнения " + amountRefillSecond + " рублей");
-        System.out.println("Вам начислено " + bonus + " бонусных рублей");
-        System.out.println("Сумма на балансе " + totalSecond + " руб");
-
     }
 }
